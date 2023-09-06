@@ -47,38 +47,28 @@ Resultado do teste:
 
 O reprocessamento seguindo os critérios acima para o período entre 01/06/2022 e 31/05/2023 está disponível no dataset `rj-smtr-dev.SMTR202212006611_reprocessamento`.
 
-CONTINUAR DAQUI!!!!
-Recalcular o valor a ser pago (tanto nos comentários no notebook quanto nos arquivos finais).
-INCLUIR FIGURAS E VALORES TOTAIS
+Mesmo antes do reprocessamento, não foram encontradas viagens planejadas da linha 010 no mês de junho de 2022.
+
+#### Resultados do reprocessamento:
+
+1) A quilometragem total das viagens completas aumentou de 66.790,1 km para 81.485,2 km, um aumento de 22% após o reprocessamento.
+
+<img src="./data/output/grafico_010_km.png" width="800">
 
 
+2) A quantidade de viagens identificadas aumentou de 6.414 para 15.670 viagens. Como as viagens que antes eram circulares foram divididas em duas viagens (ida e volta), era esperado que a quantidade de viagens pelo menos dobrasse, mesmo se nenhuma nova viagem fosse identificada.
 
-Comparar valores pré e pós reprocessamento segundo as seguintes variáveis:
-- A quantidade de viagens completas
-- Quilometragem total de viagens completas
-- Valor do subsídio a ser pago
-- Explicações pontuais sobre os resultados encontrados
-
-Sobre o período entre 01/06/2022 e 31/05/2023:
-
-1) A linha 010 não teve viagens planejadas no mês de junho de 2022.
-
-2) A quilometragem total das viagens completas aumentou de 66.790,1 km para 81.485,2 km, um aumento de 22% após o reprocessamento.
-
-3) A quantidade de viagens identificadas aumentou de 6.414 para 15.670 viagens.
-
-4) O valor do subsídio antes do reprocessamento era de R$ 100.756,68 e após o reprocessamento foi de R$ 135.630,25.
-
-5) Foi identificada uma inconsistência em abril e maio de 2023, em que foram indentificadas mais viagens, mas o POD diário diminuiu, resultando em um pagamento de subsídio menor em relação ao valor do pré-reprocessamento.
+<img src="./data/output/grafico_010_qtd_viagens.png" width="800">
 
 
+3) O valor do subsídio antes do reprocessamento era de R$ 100.756,68 e após o reprocessamento foi de R$ 169.626,86. Vale destacar que o valor do reprocessamento foi calculado sem os descontos por km, ou seja, considerando a liminar que derrubou as glosas.
+
+<img src="./data/output/grafico_010_subsidio.png" width="800">
 
 
+4) Por fim o fato de o reprocessamento ter identificado mais viagens também melhorou o POD do serviço forma geral:
 
+![Imagem local](./data/output/pod_pre.png)
 
-
-
-
-
-
+![Imagem local](./data/output/pod_pos.png)
 
