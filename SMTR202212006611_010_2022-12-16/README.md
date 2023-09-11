@@ -7,8 +7,29 @@
 
 **Período**: 01/06/2022 até 31/05/2023
 
--------
+<br>
+
+--------
+
+
+### <ins>**Sumário Executivo**</ins>
+
+<br>
+
+**1 - Problema encontrado**: foi identificada uma inconsistência em que alguns sinais de GPS foram descartados no trecho em "laço" do shape circular da viagem.
+
+**2 - Solução proposta**: reprocessamento das viagens entre 01-06-2022 e 31-05-2023 utilizando os shapes de ida e volta.
+
+**3 - Resultado**:
+- A quilometragem total das viagens completas aumentou de 66.790,1 km para 81.485,2 km, um aumento de 22% após o reprocessamento.
+- A quantidade de viagens identificadas aumentou de 6.414 para 15.670 viagens. 
+- O valor do subsídio antes do reprocessamento era de R$ 100.756,68 e após o reprocessamento foi de R$ 169.626,86. O valor do reprocessamento foi calculado sem os descontos por km no valor do subsídio.
+
+<br>
+
 ### 1) Análise exploratória
+
+<br>
 
 Após a análise do trajeto para a primeira quinzena de janeiro de 2023, foi identificada uma inconsistência em que alguns sinais de GPS foram descartados no trecho em "laço" (ver figura abaixo).
 
@@ -21,8 +42,11 @@ Ao considerar o shape de 01/06/2023, que divide a viagem circular em ida e volta
 
 
 
+<br>
 
 ### 2) Teste amostral
+
+<br>
 
 A partir da alteração do shape, os dados da primeira quinzena de janeiro de 2023 foram reprocessados e comparados com os dados do gabarito enviado pelo consórcio operacional (dados disponíveis [aqui](https://docs.google.com/spreadsheets/d/11jKNeWoXB4Uke4WWwWsjHo8I-ZRr8f3Y/edit#gid=1849603428)).
 
@@ -40,10 +64,14 @@ Resultado do teste:
     1) Em três casos os veículos não emitiram sinais de GPS no horário indicado no gabarito.
     2) Em dois casos os veículos operaram em outro serviço no horário indicado no gabarito (serviço 007).
     3) Em dois casos a viagem ocorreu, mas ficou um pouco acima da margem de + ou - 10 minutos
+    4) Foram trinta e cinco casos de viagens que foram encontradas na solução, porém não constam no gabarito.
 
 
+<br>
 
 ### 3) Análise do Reprocessamento
+
+<br>
 
 O reprocessamento seguindo os critérios acima para o período entre 01/06/2022 e 31/05/2023 está disponível no dataset `rj-smtr-dev.SMTR202212006611_reprocessamento`.
 
@@ -66,9 +94,7 @@ Mesmo antes do reprocessamento, não foram encontradas viagens planejadas da lin
 <img src="./data/output/grafico_010_subsidio.png" width="800">
 
 
-4) Por fim o fato de o reprocessamento ter identificado mais viagens também melhorou o POD do serviço forma geral:
+4) Por fim, o fato de o reprocessamento ter identificado mais viagens também melhorou o POD do serviço forma geral:
 
-![Imagem local](./data/output/pod_pre.png)
-
-![Imagem local](./data/output/pod_pos.png)
+![Imagem local](./data/output/pod_pre_pos.png)
 
