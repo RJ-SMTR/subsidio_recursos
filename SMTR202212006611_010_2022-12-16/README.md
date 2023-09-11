@@ -1,4 +1,4 @@
-# Recurso: SMTR202211008775
+# Recurso: SMTR202212006611
 
 **Mensagem**:
 "Bom dia, Solicitamos a verificação do itinerário da linha 010, por ser uma linha do tipo circular e com 2 pontos finais, verificamos que diversas viagens não estão sendo apuradas, solicitamos a verificação".
