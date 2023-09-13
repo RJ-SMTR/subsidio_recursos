@@ -1,28 +1,38 @@
 # Recurso: SMTR202212006611
 
+---
+
+## Contexto
+
 **Solicitação**: "Bom dia, Solicitamos a verificação do itinerário da linha 010, por ser uma linha do tipo circular e com 2 pontos finais, verificamos que diversas viagens não estão sendo apuradas, solicitamos a verificação".
 
 **Linha afetada**: 010
 
 **Período**: 01/06/2022 até 31/05/2023
 
---------
-
 ## Resumo
 
-**1. Problema**: Viagens não foram identificadas devido ao
+### Problema
+
+Viagens não foram identificadas devido ao
 formato do trajeto. Por ter um laço próximo ao raio do ponto de quebra
 do trajeto (ponto médio), os sinais de GPS percorridos nesse laço são perdidos entre
 as meias-viagens. Por consequência, o % de minutos da viagem
 cobertos por GPS fica menor do que deveria, invalidando viagens que
 deveriam ser válidas (Figura 1). A explicação detalhada segue na próxima seção.
 
-**2. Solução**: Identificamos que a partir de 01/06/23 o problema é
-resolvido com a quebra do trajeto circular em ida e volta (sem
-alterações na rota). Portando, a proposta é realizar o reprocessamento das viagens entre 01/06/2022 e
-31/05/2023 utilizando os trajetos de ida e volta.
+### Solução
 
-**3. Resultado**:
+Identificamos que a partir de 01/06/23 o problema é resolvido com a quebra do trajeto circular em ida e volta (sem
+alterações na rota). Portando, a proposta é realizar o reprocessamento
+das viagens entre 01/06/2022 e 31/05/2023 utilizando os trajetos de ida
+e volta.
+
+### Resultado
+
+> **Status: Bloqueado**. Aguardando tabela de recursos para remover dias que foram pagos pela média (Reprocessamento e Bloqueio de Via).
+
+**Valor a pagar: R\$ 68.870,18**
 
 - Com a solução, foram identificadas 99% das viagens da amostra enviada no recurso;
 - A quilometragem total aumentou em 22% após o reprocessamento;
@@ -33,46 +43,41 @@ alterações na rota). Portando, a proposta é realizar o reprocessamento das vi
   169.626,86). O novo valor, porém, foi calculado sem os
   descontos por tipo de viagem que eram aplicados à epoca.
 
-<img src="./data/figures/mapa_viagem_pre_solucao.png" width="800">
+## Análise exploratória
 
-<img src="./data/figures/mapa_viagem_pos_solucao.png" width="800">
+- Análise da amostra com as viagens da época (1) -> qual % foi identificado?
+  qual não foi? por quê? pegar 1 exemplo identificado e não identificado;
 
-## 1. Análise exploratória
+- Análise mais aprofundada do problema - identificamos alguma mudança
+  histórica da linha?
 
-- TODO: Adicionar detalhes de como foi encontrada a solução (como
-  descobrimos a quebra do shape em ida + volta? -> grafico POD por mes, etc)
+  - Gráfico de POD antes da solução (2), desde 01/06/22 até a data de
+    avaliação do recurso
+  - Texto explicando o mudança identificada no trajeto a partir do dia
+    01/06 (destacar no gráfico anterior)
 
-<br>
+- Texto sobre a solução proposta
 
-<!-- Após a análise do trajeto para a primeira quinzena de janeiro de 2023, foi identificada uma inconsistência em que alguns sinais de GPS foram descartados no trecho em "laço" (ver figura abaixo).
+- Análise da amostra com as viagens da solução (3) -> identificamos todas as
+  viagens ou não? por quê? explicitar viagens que não foram
+  identificadas
 
-![Imagem local](./data/figures/figura_1.png)
+- Foram identificadas 701 das 706 viagens do gabarito (99%), além de 35
+  viagens extras.
+  - 3 viagens: veículos não emitiram sinais de GPS no horário;
+  - 2 viagens: operaram em outro serviço (007);
 
-Ao considerar o shape de 01/06/2023, que divide a viagem circular em ida e volta, os sinais de GPS foram devidamente identificados:
+<!-- <img src="./data/figures/analise_mapa_viagem_pre_solucao.png" width="800">
 
-![Imagem local](./data/figures/figura_2.png) -->
+<img src="./data/figures/analise_mapa_viagem_pos_solucao.png" width="800"> -->
 
-## 2. Teste amostral
-
-A partir da alteração do shape, os dados da primeira quinzena de janeiro de 2023 foram reprocessados e comparados com os dados do gabarito enviado pelo consórcio operacional (dados disponíveis [aqui](https://docs.google.com/spreadsheets/d/11jKNeWoXB4Uke4WWwWsjHo8I-ZRr8f3Y/edit#gid=1849603428)).
-
-### Método
+### Método de avaliação da amostra
 
 A comparação entre o `datetime_partida` do gabarito e da solução foi feita com uma margem de 10 minutos para mais ou para menos.
 
 Para as viagens não encontradas na etapa anterior, foi verificado se os veículos operaram nos dias e horários apontados no gabarito, com base em dados de GPS e do reprocessamento de conformidade das viagens proveniente do dataset `rj-smtr-dev.20230818_projeto_subsidio_sppo_010`
 
-### Resultados
-
-- Foram identificadas 699 das 706 viagens do gabarito (99%) em um intervalo de + ou - 10 minutos entre os `datetime_partida` do gabarito e da solução.
-
-- Sobre as sete viagens não identificadas:
-    1) Em três casos os veículos não emitiram sinais de GPS no horário indicado no gabarito.
-    2) Em dois casos os veículos operaram em outro serviço no horário indicado no gabarito (serviço 007).
-    3) Em dois casos a viagem ocorreu, mas ficou um pouco acima da margem de + ou - 10 minutos
-    4) Foram trinta e cinco casos de viagens que foram encontradas na solução, porém não constam no gabarito.
-
-## 3. Reprocessamento
+## Reprocessamento
 
 O reprocessamento seguindo os critérios acima para o período entre 01/06/2022 e 31/05/2023 está disponível no dataset `rj-smtr-dev.SMTR202212006611_reprocessamento`.
 
@@ -95,4 +100,3 @@ Mesmo antes do reprocessamento, não foram encontradas viagens planejadas da lin
 4) Por fim, o fato de o reprocessamento ter identificado mais viagens também melhorou o POD do serviço forma geral:
 
 <img src="./data/figures/POD_pre_pos.png" width="800">
-
