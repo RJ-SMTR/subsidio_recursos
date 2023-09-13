@@ -33,9 +33,9 @@ alterações na rota). Portando, a proposta é realizar o reprocessamento das vi
   169.626,86). O novo valor, porém, foi calculado sem os
   descontos por tipo de viagem que eram aplicados à epoca.
 
-![Imagem local](./data/figures/mapa_viagem_pre_solucao.png)
+<img src="./data/figures/mapa_viagem_pre_solucao.png" width="800">
 
-![Imagem local](./data/figures/mapa_viagem_pos_solucao.png)
+<img src="./data/figures/mapa_viagem_pos_solucao.png" width="800">
 
 ## 1. Análise exploratória
 
