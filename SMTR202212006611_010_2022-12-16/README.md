@@ -88,7 +88,7 @@ Mesmo antes do reprocessamento, não foram encontradas viagens planejadas da lin
 
 <img src="./data/figures/grafico_010_qtd_viagens.png" width="800">
 
-3) O valor do subsídio antes do reprocessamento era de R$ 100.756,68 e após o reprocessamento foi de R$ 169.626,86. Vale destacar que o valor do reprocessamento foi calculado sem os descontos por km, ou seja, considerando a liminar que derrubou as glosas.
+3) O valor do subsídio antes do reprocessamento era de R\$ 100.756,68 e após o reprocessamento foi de R\$ 169.626,86. Vale destacar que o valor do reprocessamento foi calculado sem os descontos por km, ou seja, considerando a liminar que derrubou as glosas.
 
 <img src="./data/figures/grafico_010_subsidio.png" width="800">
 
