@@ -94,5 +94,5 @@ Mesmo antes do reprocessamento, não foram encontradas viagens planejadas da lin
 
 4) Por fim, o fato de o reprocessamento ter identificado mais viagens também melhorou o POD do serviço forma geral:
 
-<img src="./data/figures/pod_pre_pos.png" width="800">
+<img src="./data/figures/POD_pre_pos.png" width="800">
 
