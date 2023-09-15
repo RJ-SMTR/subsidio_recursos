@@ -169,9 +169,9 @@ def create_trip_map(posicoes, shapes_geom):
 
 
 if __name__ == "__main__":
-    posicoes = pd.read_csv("data_graph_test/dados_gps.csv") # gps_pre.csv
+    posicoes = pd.read_csv("data_graph_test/gps_check.csv") # gps_pre.csv
 
-    shapes = pd.read_csv("data_graph_test/shape_pre.csv")
+    shapes = pd.read_csv("data_graph_test/shape_check.csv")
     title = "nome_do_mapa"  # definir quando for criar
 
     # Cria mapa da viagem  - TODO: adicionar sentido no tooltip do shape
