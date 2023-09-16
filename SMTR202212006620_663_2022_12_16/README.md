@@ -8,24 +8,53 @@
 
 **Linha afetada**: 663
 
-**Período**: início em 01/06/2022
+**Período**: 01/06/2022 até 31/12/2022
 
 ## Resumo
-
 ### Problema
 
 Todas as viagens do ano de 2023 presentes na amostra analisada foram identificadas. 
 
-As viagens não identificadas foram todas do ano de 2022, mas a não identificação deve-se ao fato de que o solicitante compreendeu que o serviço realizou duas viagens de ida e volta, quando na verdade ocorreu apenas uma viagem circular.
+Para os casos das viagens não identificadas, todas do ano de 2022, as explicações encontradas foram:
 
+1) O solicitante compreendeu que o serviço realizou duas viagens de ida e volta, quando na verdade ocorreu apenas uma viagem.
+
+Exemplo com o caso do veículo B28514 na manhã do dia 27/09/2022:
+
+No gabarito, foi indicado que o veículo teria feito duas viagens nos seguintes intervalos:
+- Entre 05:50 e 05:46
+- Entre 06:51 e 07:39
+
+A primeira viagem foi identificada como iniciada às 05:51 e terminou às 07:37, horário que abrange as duas viagens acima.
+
+Viagem identificada (viagem circular): 
+
+<img src="./data/figures/663_identificada.png" width="800">
+
+Se filtrarmos o intervalo da viagem da amostra não identificada, ela retorna os sinais de GPS apenas em um sentido:
+
+<img src="./data/figures/663_não_identificada.png" width="800">
+
+
+
+2) Em alguns casos, a viagem não foi identificada por uma alteração no ponto intermediário do shapefile, o que resultou na não identificação de algumas viagens do serviço.
+
+Exemplo com o caso do veículo B28631 no dia 22/09/2022:
+
+<img src="./data/figures//viagem_n_identificada_663.png" width="800">
 
 ### Solução
 
-Não se aplica.
+A solução proposta foi o reprocessamento das viagens de 2022 utilizando o shape de janeiro de 2023.
+
 
 ### Resultado
 
-> **Status: Finalizado**.
+Após o reprocessamento, as viagens 
+
+Ver o README DA 010 E COLOCAR AQUI OS ELEMENTOS QUE EU APAGUEI!!!!
+
+> **Status: aguardando **.
 
 **Valor a pagar: Não se aplica**
 
@@ -38,7 +67,6 @@ O que explica a variação no POD? Mudança no shape em janeiro?
 
 
 
-
 Das 24 viagens recebidas na amostra, duas eram casos de viagens dos mesmos veículos que ocorriam em horários e dias sobrepostos, logo foram desconsideradas na análise.
 
 Quanto às 22 viagens restantes:
@@ -46,24 +74,6 @@ Quanto às 22 viagens restantes:
 - Em 3 viagens foi identificado o sinal de GPS, pois o serviço é circular e a viagem já havia sido identificada (caso ilustrado nos mapas abaixo).
 
 
-
-Os mapas abaixo ilustram o caso do veículo B28514 na manhã do dia 27/09/2022.
-
-No gabarito foi indicado que o veículo teria feito duas viagens nos seguintes intervalos:
-- Entre 05:50 e 05:46
-- Entre 06:51 e 07:39
-
-A primeira viagem foi identificada como  iniciada às 05:51 e terminou às 07:37, horário que abrange as duas viagens acima.
-
-Viagem identificada (viagem circular): 
-
-
-<img src="./data/figures/663_identificada.png" width="800">
-
-Se filtrarmos o intervalo da viagem da amostra não identificada, ela retorna os sinais de GPS apenas em um sentido:
-
-
-<img src="./data/figures/663_não_identificada.png" width="800">
 
 
 
