@@ -13,6 +13,37 @@
 ## Resumo
 
 ### Problema
+O solicitante compreendeu que o serviço realizou duas viagens de ida e volta, quando na verdade ocorreu apenas uma viagem. 
+
+Também foi identificado que algumas viagens não estão sendo identificadas, mesmo após o reprocessamento com o shape de janeiro de 2023.
+
+
+### Solução
+Não se aplica.
+
+### Resultado
+
+Das 24 viagens recebidas na amostra, 2 eram casos de viagens dos mesmos veículos que ocorriam em horários e dias sobrepostos, logo foram desconsideradas na análise.
+
+Quanto às 22 viagens restantes:
+- 13 foram identificadas com os dados de viagens apuradas.
+- 5 são inválidas, pois são viagens duplicadas quando na verdade a linha é circular.
+- 1 o veículo fez apenas metade do trajeto
+- 3 viagens não foram identificadas, mas os veículos emitiram sinais de GPS nos horários indicados na amostra. 
+
+Ou seja, foi explicado 86% das viagens da amostra.
+
+
+> **Status: - **.
+
+**Valor a pagar: Não se aplica**
+
+## Análise exploratória
+
+O que explica a variação no POD? Mudança no shape em janeiro?
+
+<img src="./data/figures/pod_663.png" width="800">
+
 
 Todas as viagens do ano de 2023 presentes na amostra analisada foram identificadas. 
 
@@ -34,41 +65,17 @@ Viagem identificada (viagem circular):
 
 Se filtrarmos o intervalo da viagem da amostra não identificada, ela retorna os sinais de GPS apenas em um sentido:
 
-<img src="./data/figures/viagens_n_encontradas_663.png" width="800">
+<img src="./data/figures/663_não_identificada.png" width="800">
 
 
 
-2) Em três casos da amostra, a viagem não foi identificada:
+2) Em três casos da amostra, a viagem não foi identificada, mas existem dados de GPS para o momento da viagem:
 
 - B28631 no dia 14/09/2022 entre 06:16 e 07:13
 - B28514 no dia 22/09/2022 entre 05:46 e 06:35
 - B28631 no dia 22/09/2022 entre 06:14 e 07:04
 
-<img src="./data/figures/viagens_n_encontradas_663.png
-
-
-
-### Resultado
-
-
-> **Status: Finalizada **.
-
-**Valor a pagar: Não se aplica**
-
-## Análise exploratória
-
-O que explica a variação no POD? Mudança no shape em janeiro?
-
-<img src="./data/figures/pod_663.png" width="800">
-
-
-Das 24 viagens recebidas na amostra, duas eram casos de viagens dos mesmos veículos que ocorriam em horários e dias sobrepostos, logo foram desconsideradas na análise.
-
-Quanto às 22 viagens restantes:
-- 13 foram identificadas com os dados de viagens apuradas.
-- 5 são inválidas, pois são viagens duplicadas quando na verdade a linha é circular.
-- 1 o veículo fez apenas metade do trajeto
-- 3 viagens não foram identificadas, mas os veículos emitiram sinais de GPS. 
+<img src="./data/figures/viagens_n_encontradas_663.png" width="800">
 
 
 ### Método de avaliação da amostra
