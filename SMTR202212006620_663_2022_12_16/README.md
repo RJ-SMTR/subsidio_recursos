@@ -11,6 +11,7 @@
 **Período**: 01/06/2022 até 31/12/2022
 
 ## Resumo
+
 ### Problema
 
 Todas as viagens do ano de 2023 presentes na amostra analisada foram identificadas. 
@@ -33,52 +34,44 @@ Viagem identificada (viagem circular):
 
 Se filtrarmos o intervalo da viagem da amostra não identificada, ela retorna os sinais de GPS apenas em um sentido:
 
-<img src="./data/figures/663_não_identificada.png" width="800">
+<img src="./data/figures/viagens_n_encontradas_663.png" width="800">
 
 
 
-2) Em alguns casos, a viagem não foi identificada por uma alteração no ponto intermediário do shapefile, o que resultou na não identificação de algumas viagens do serviço.
+2) Em três casos da amostra, a viagem não foi identificada:
 
-Exemplo com o caso do veículo B28631 no dia 22/09/2022:
+- B28631 no dia 14/09/2022 entre 06:16 e 07:13
+- B28514 no dia 22/09/2022 entre 05:46 e 06:35
+- B28631 no dia 22/09/2022 entre 06:14 e 07:04
 
-<img src="./data/figures//viagem_n_identificada_663.png" width="800">
+<img src="./data/figures/viagens_n_encontradas_663.png
 
-### Solução
-
-A solução proposta foi o reprocessamento das viagens de 2022 utilizando o shape de janeiro de 2023.
 
 
 ### Resultado
 
-Após o reprocessamento, as viagens 
 
-Ver o README DA 010 E COLOCAR AQUI OS ELEMENTOS QUE EU APAGUEI!!!!
-
-> **Status: aguardando **.
+> **Status: Finalizada **.
 
 **Valor a pagar: Não se aplica**
 
 ## Análise exploratória
-
 
 O que explica a variação no POD? Mudança no shape em janeiro?
 
 <img src="./data/figures/pod_663.png" width="800">
 
 
-
 Das 24 viagens recebidas na amostra, duas eram casos de viagens dos mesmos veículos que ocorriam em horários e dias sobrepostos, logo foram desconsideradas na análise.
 
 Quanto às 22 viagens restantes:
 - 13 foram identificadas com os dados de viagens apuradas.
-- Em 3 viagens foi identificado o sinal de GPS, pois o serviço é circular e a viagem já havia sido identificada (caso ilustrado nos mapas abaixo).
-
-
-
+- 5 são inválidas, pois são viagens duplicadas quando na verdade a linha é circular.
+- 1 o veículo fez apenas metade do trajeto
+- 3 viagens não foram identificadas, mas os veículos emitiram sinais de GPS. 
 
 
 ### Método de avaliação da amostra
 
 A comparação entre o `datetime_partida` do gabarito e da solução foi feita com uma margem de 10 minutos para mais ou para menos.
-
 
