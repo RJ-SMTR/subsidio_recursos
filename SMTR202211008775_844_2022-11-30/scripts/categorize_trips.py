@@ -48,8 +48,6 @@ def remove_overlapping_trips(df: pd.DataFrame) -> pd.DataFrame:
 
 # 2 - Classifica as viagens caso elas estejam na tabela viagem_completa
 
-import pandas as pd
-
 def check_complete_trips(amostra: pd.DataFrame, viagem_completa: pd.DataFrame, intervalo: int) -> pd.DataFrame:
     
     # Filtrando as colunas necessárias
@@ -90,12 +88,7 @@ def check_complete_trips(amostra: pd.DataFrame, viagem_completa: pd.DataFrame, i
         matching_rows = pd.merge(tabela_comparativa, duplicated_rows[['id_veiculo_apurada', 'datetime_partida_apurada']], on=['id_veiculo_apurada', 'datetime_partida_apurada'], how='inner')
         print("\nCasos duplicados encontrados no cruzamento de dados:")
         print(matching_rows)
-       
-          
-       
-       
-       
-       
+      
        
     # juntar tudo em uma tabela só
     
@@ -126,48 +119,3 @@ def check_complete_trips(amostra: pd.DataFrame, viagem_completa: pd.DataFrame, i
 
 # Exemplo de uso:
 # resultado_final = check_complete_trips(amostra_df, viagem_completa_df, 10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def check_complete_trips(amostra: pd.DataFrame, viagem_completa: pd.DataFrame, intervalo: int) -> pd.DataFrame:
-#     # Filtrando as colunas necessárias
-#     viagem_completa = viagem_completa[['servico_informado','id_veiculo','sentido','datetime_partida','datetime_chegada']]
-    
-#     # 1. Adicionar uma chave temporária
-#     amostra['tmp_key'] = amostra['id_veiculo']
-#     viagem_completa['tmp_key'] = viagem_completa['id_veiculo']
-
-#     # 2. Fazendo o merge usando a chave temporária
-#     tabela_comparativa = pd.merge(amostra, viagem_completa, on='tmp_key', suffixes=('_amostra', '_apurada'))
-
-#     # 3. Filtrar os resultados com base no critério do intervalo de tempo
-#     condition = (tabela_comparativa['datetime_partida_apurada'] >= (tabela_comparativa['datetime_partida_amostra'] - pd.Timedelta(minutes=intervalo))) & \
-#                 (tabela_comparativa['datetime_partida_apurada'] <= (tabela_comparativa['datetime_partida_amostra'] + pd.Timedelta(minutes=intervalo)))
-
-#     tabela_comparativa = tabela_comparativa[condition]
-
-#     # Removendo a chave temporária e outras colunas desnecessárias
-#     tabela_comparativa.drop(columns=['tmp_key'], inplace=True)
-
-#     # Atualizar a coluna 'status' baseada nas condições
-#     tabela_comparativa.loc[tabela_comparativa['id_veiculo_amostra'] == tabela_comparativa['id_veiculo_apurada'], 'status'] = 'O veículo existe e operou na linha indicada pelo recurso'
-#     tabela_comparativa.loc[tabela_comparativa['id_veiculo_amostra'] != tabela_comparativa['id_veiculo_apurada'], 'status'] = 'Viagem encontrada no serviço, mas com veículo diferente'
-
-#     return tabela_comparativa
-
-# # Exemplo de uso:
-# # resultado = check_complete_trips(amostra_df, viagem_completa_df, 10)
-
