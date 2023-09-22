@@ -27,7 +27,7 @@ Quanto às 22 viagens restantes:
 - 6 viagens circulares foram consideradas inválidas por não passarem no raio de 500m do ponto inicial ou final, e foram classificadas como "Viagem circular inválida - sem sinal inicial/final dentro do raio de 500m".
 
 
-> **Status: Finalizado **.
+> **Status: Finalizado**.
 
 **Valor a pagar: Não se aplica**
 
