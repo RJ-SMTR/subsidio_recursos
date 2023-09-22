@@ -32,12 +32,12 @@ def remove_overlapping_trips(df: pd.DataFrame) -> pd.DataFrame:
             for overlapping_index in overlapping_rows.index:
                 if df_processed.at[overlapping_index, 'datetime_partida'] == row['datetime_partida']:
                     if overlapping_index > index:
-                        df_processed.at[overlapping_index, 'status'] = 'Viagem inválida - sobreposição de viagem'
+                        df_processed.at[overlapping_index, 'status'] = 'Viagem duplicada na amostra'
                 elif df_processed.at[overlapping_index, 'datetime_partida'] == row['datetime_chegada']:
                     df_processed.at[index, 'status'] = np.nan
                 elif df_processed.at[overlapping_index, 'datetime_partida'] < row['datetime_chegada'] and df_processed.at[overlapping_index, 'datetime_chegada'] > row['datetime_partida']:
                     if overlapping_index > index:
-                        df_processed.at[overlapping_index, 'status'] = 'Viagem inválida - sobreposição de viagem'
+                        df_processed.at[overlapping_index, 'status'] = 'Viagem duplicada na amostra'
                         
     return df_processed
 
@@ -77,7 +77,7 @@ def check_complete_trips(amostra: pd.DataFrame, viagem_completa: pd.DataFrame, i
     tabela_comparativa.drop(columns=['tmp_key'], inplace=True)
 
     # Atualizar a coluna 'status' baseada nas condições
-    tabela_comparativa.loc[tabela_comparativa['id_veiculo_amostra'] == tabela_comparativa['id_veiculo_apurada'], 'status'] = 'O veículo existe e operou na linha indicada pelo recurso'
+    tabela_comparativa.loc[tabela_comparativa['id_veiculo_amostra'] == tabela_comparativa['id_veiculo_apurada'], 'status'] = 'Viagem circular identificada e já paga'
     tabela_comparativa.loc[tabela_comparativa['id_veiculo_amostra'] != tabela_comparativa['id_veiculo_apurada'], 'status'] = 'Viagem encontrada no serviço, mas com veículo diferente'
 
     # Verificar se existem dados duplicados no cruzamento de dados

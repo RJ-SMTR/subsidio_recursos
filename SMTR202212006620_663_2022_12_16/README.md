@@ -15,39 +15,28 @@
 ### Problema
 O solicitante compreendeu que o serviço realizou duas viagens de ida e volta, quando na verdade ocorreu apenas uma viagem. 
 
-Também foi identificado que algumas viagens não estão sendo identificadas, mesmo após o reprocessamento com o shape de janeiro de 2023.
-
-
 ### Solução
 Não se aplica.
 
 ### Resultado
 
-Das 24 viagens recebidas na amostra, 2 eram casos de viagens dos mesmos veículos que ocorriam em horários e dias sobrepostos, logo foram desconsideradas na análise.
+Das 24 viagens recebidas na amostra, 2 eram casos de viagens dos mesmos veículos que ocorriam em horários e dias sobrepostos, logo foram desconsideradas na análise e classificadas como "Viagem duplicada na amostra".
 
 Quanto às 22 viagens restantes:
-- 13 foram identificadas com os dados de viagens apuradas.
-- 5 são inválidas, pois são viagens duplicadas quando na verdade a linha é circular.
-- 1 o veículo fez apenas metade do trajeto
-- 3 viagens não foram identificadas, mas os veículos emitiram sinais de GPS nos horários indicados na amostra. 
-
-Ou seja, foi explicado 86% das viagens da amostra.
+- 16 viagens foram identificadas com os dados de viagens apuradas e classificadas com o status "Viagem circular identificada e já paga".
+- 6 viagens circulares foram consideradas inválidas por não passarem no raio de 500m do ponto inicial ou final, e foram classificadas como "Viagem circular inválida - sem sinal inicial/final dentro do raio de 500m".
 
 
-> **Status: - **.
+> **Status: Finalizado **.
 
 **Valor a pagar: Não se aplica**
 
 ## Análise exploratória
 
-O que explica a variação no POD? Mudança no shape em janeiro?
+O Percentual de Operação Diário (POD) da linha apresentou valores abaixo do mínimo de 80% no ano de 2022.
 
 <img src="./data/figures/pod_663.png" width="800">
 
-
-Todas as viagens do ano de 2023 presentes na amostra analisada foram identificadas. 
-
-Para os casos das viagens não identificadas, todas do ano de 2022, as explicações encontradas foram:
 
 1) O solicitante compreendeu que o serviço realizou duas viagens de ida e volta, quando na verdade ocorreu apenas uma viagem.
 
@@ -59,23 +48,15 @@ No gabarito, foi indicado que o veículo teria feito duas viagens nos seguintes 
 
 A primeira viagem foi identificada como iniciada às 05:51 e terminou às 07:37, horário que abrange as duas viagens acima.
 
-Viagem identificada (viagem circular): 
+Viagem identificada: 
 
 <img src="./data/figures/663_identificada.png" width="800">
+
 
 Se filtrarmos o intervalo da viagem da amostra não identificada, ela retorna os sinais de GPS apenas em um sentido:
 
 <img src="./data/figures/663_não_identificada.png" width="800">
 
-
-
-2) Em três casos da amostra, a viagem não foi identificada, mas existem dados de GPS para o momento da viagem:
-
-- B28631 no dia 14/09/2022 entre 06:16 e 07:13
-- B28514 no dia 22/09/2022 entre 05:46 e 06:35
-- B28631 no dia 22/09/2022 entre 06:14 e 07:04
-
-<img src="./data/figures/viagens_n_encontradas_663.png" width="800">
 
 
 ### Método de avaliação da amostra
