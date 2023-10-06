@@ -15,18 +15,11 @@
 ### Problema
 
 Viagens não foram identificadas devido ao
-formato do trajeto. Por ter um laço próximo ao raio do ponto de quebra
-do trajeto (ponto médio), os sinais de GPS percorridos nesse laço são perdidos entre
-as meias-viagens. Por consequência, o % de minutos da viagem
-cobertos por GPS fica menor do que deveria, invalidando viagens que
-deveriam ser válidas (Figura 1). A explicação detalhada segue na próxima seção.
+formato do trajeto. Por ter um laço próximo ao raio do ponto de quebra do trajeto (ponto médio), os sinais de GPS percorridos nesse laço são perdidos entre as meias-viagens. Por consequência, o % de minutos da viagem cobertos por GPS fica menor do que deveria, invalidando viagens que deveriam ser válidas (Figura 1). A explicação detalhada segue na próxima seção.
 
 ### Solução
 
-Identificamos que a partir de 01/06/23 o problema é resolvido com a quebra do trajeto circular em ida e volta (sem
-alterações na rota). Portando, a proposta é realizar o reprocessamento
-das viagens entre 01/06/2022 e 31/05/2023 utilizando os trajetos de ida
-e volta.
+Identificamos que a partir de 01/06/23 o problema é resolvido com a quebra do trajeto circular em ida e volta (sem alterações na rota). Portando, a proposta é realizar o reprocessamento das viagens entre 01/06/2022 e 31/05/2023 utilizando os trajetos de ida e volta.
 
 ### Resultado
 
@@ -34,7 +27,6 @@ e volta.
 
 **Valor a pagar: R\$ 68.870,18**
 
-- Com a solução, foram identificadas 99% das viagens da amostra enviada no recurso;
 - A quilometragem total aumentou em 22% após o reprocessamento;
 - A quantidade de viagens aumentou em 144%, ou seja, 44% de viagens
   extras foram identificadas (1 viagem circular passa a ser 1 ida + 1
@@ -45,37 +37,44 @@ e volta.
 
 ## Análise exploratória
 
-- Análise da amostra com as viagens da época (1) -> qual % foi identificado?
-  qual não foi? por quê? pegar 1 exemplo identificado e não identificado;
+O gráfico a seguir mostra que o Percentual de Operação Diário da linha permaneceu constante e próximo de 100% partir de junho/2023, mesmo período em que ocorreu a quebra do trajeto circular em ida e volta que resolveu o problema.
 
-- Análise mais aprofundada do problema - identificamos alguma mudança
-  histórica da linha?
+<img src="./data/figures/pod_historico_010.png" width="800">
 
-  - Gráfico de POD antes da solução (2), desde 01/06/22 até a data de
-    avaliação do recurso
-  - Texto explicando o mudança identificada no trajeto a partir do dia
-    01/06 (destacar no gráfico anterior)
 
-- Texto sobre a solução proposta
+No exemplo abaixo é possível ver o impacto que a alteração do ponto médio teve na identificação de uma mesma viagem:
 
-- Análise da amostra com as viagens da solução (3) -> identificamos todas as
-  viagens ou não? por quê? explicitar viagens que não foram
-  identificadas
+Viagem antes da alteração do ponto médio:
 
-- Foram identificadas 701 das 706 viagens do gabarito (99%), além de 35
-  viagens extras.
-  - 3 viagens: veículos não emitiram sinais de GPS no horário;
-  - 2 viagens: operaram em outro serviço (007);
+<img src="./data/figures/analise_mapa_viagem_pre_solucao.png" width="800">
 
-<!-- <img src="./data/figures/analise_mapa_viagem_pre_solucao.png" width="800">
+Viagem após a alteração do ponto médio (solução):
 
-<img src="./data/figures/analise_mapa_viagem_pos_solucao.png" width="800"> -->
+<img src="./data/figures/analise_mapa_viagem_pos_solucao.png" width="800">
+
+
+A solução proposta envolveu o reprocessamento das viagens entre junho de 2022 e maio de 2023 com o shape do trajeto de 01/06/2023.
+
+Das 707 viagens que constam na amostra recebida:
+
+**Antes do reprocessamento:**
+- Viagem identificada: 531
+- Viagem inválida por conformidade do trajeto: 119
+- Viagem inválida por não passar no ponto inicial ou final: 52
+- Veículos sem sinal de GPS no momento da viagem: 4
+- Viagem duplicada na amostra: 1
+
+**Após o reprocessamento:**
+- Viagem identificada: 699
+- Veículos sem sinal de GPS no momento da viagem: 4
+- Viagem inválida por não passar no ponto inicial ou final: 3
+- Viagem duplicada na amostra: 1
+
 
 ### Método de avaliação da amostra
 
-A comparação entre o `datetime_partida` do gabarito e da solução foi feita com uma margem de 10 minutos para mais ou para menos.
+A comparação entre o `datetime_partida` da amostra e da solução foi feita com uma margem de 10 minutos para mais ou para menos.
 
-Para as viagens não encontradas na etapa anterior, foi verificado se os veículos operaram nos dias e horários apontados no gabarito, com base em dados de GPS e do reprocessamento de conformidade das viagens proveniente do dataset `rj-smtr-dev.20230818_projeto_subsidio_sppo_010`
 
 ## Reprocessamento
 
