@@ -38,8 +38,7 @@ No dia 31/12/2022, as viagens de volta foram registradas na tabela `viagem_confo
 No dia 01/01/2023, nenhuma viagem foi registrada na tabela `viagem_conformidade`, apesar de existirem viagens de ida na tabela `viagem_completa`.
 
 
-Especificamente nesses dias existem 2 shapes de ida devido ao fechamento de vias no reveillon. O algoritmo foi ajustado para receber mais um shape e escolher o shape de ida com o maior fit, o que parece ter funcionado adequadamente. 
-
+Especificamente nesses dias existem 2 shapes de ida devido ao fechamento de vias no reveillon. O algoritmo foi ajustado para receber mais um shape e escolher o shape de ida com o maior fit, o que parece ter funcionado adequadamente. O problema parece ser no sentido de volta. 
 
 
 
@@ -54,7 +53,7 @@ Especificamente nesses dias existem 2 shapes de ida devido ao fechamento de vias
 
 ### Método de avaliação da amostra
 
-A comparação entre o `datetime_partida` do gabarito e da solução foi feita com uma margem de 10 minutos para mais ou para menos.
+A comparação entre o `datetime_partida` da amostra e da solução foi feita com uma margem de 10 minutos para mais ou para menos.
 
 
 ### Resultados
