@@ -57,7 +57,7 @@ Vale destacar que a amostra recebida tratou as viagens, que são de uma linha ci
 
 ### Método de avaliação da amostra
 
-A comparação entre o `datetime_partida` do gabarito e da solução foi feita com uma margem de 4 minutos para mais ou para menos, por se tratarem de viagens curtas.
+A comparação entre o `datetime_partida` da amostra e da solução foi feita com uma margem de 4 minutos para mais ou para menos, por se tratarem de viagens curtas.
 
 
 ## Reprocessamento
