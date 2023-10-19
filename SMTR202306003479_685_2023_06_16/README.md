@@ -17,7 +17,8 @@ Foi identificada uma queda na quantidade de viagens de volta no período entre 1
 
 
 ### Solução
-Não se aplica.
+
+A operadora passou a realizar o trajeto no sentido de volta da forma correta a partir de 04/08/2023, o que resultou na identificação correta das viagens.
 
 
 
@@ -42,10 +43,16 @@ Ao realizar a comparação entre as viagens de volta dos dia 14 e 15 de fevereir
 
 <img src="./data/figures/685 antes e após a mudança do trajeto.png" alt="Descrição da imagem" width="800"/>
 
-
 Este desvio fez com que parte significativa das viagens de volta não fossem identificadas. 
 
 Os casos das viagens de volta que fizeram o desvio no trajeto, e mesmo assim foram identificadas, pode ser explicado pelo fato de que o último sinal de GPS emitido antes do veículo entrar no raio de entorno do ponto final foi um ponto dentro dos 500m do trajeto, e não um ponto fora do limite dos 500m, como foi o caso das viagens não identificadas.
+
+A partir do dia 04/08/2023, as viagens de volta foram realizadas de forma correta e foram devidamente identificadas. O mapa abaixo mostra os sinais de GPS de todas as viagens de volta na data supracidata:
+
+<img src="./data/figures/04-08-2023_685.png" alt="Descrição da imagem" width="800"/>
+
+
+Obs: Ao longo do período afetado, não houve alteração no trajeto/shape do serviço.
 
 
 ### Método de avaliação da amostra
