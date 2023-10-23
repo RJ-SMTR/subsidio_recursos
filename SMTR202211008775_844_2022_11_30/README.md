@@ -29,8 +29,8 @@ A partir de 01/01/2023, o aumento na quilometragem apurada coincidiu com a data 
 
 - Com a solução, foram identificadas 100% das viagens da amostra enviada no recurso;
 - A quilometragem total aumentou em 70% após o reprocessamento;
-- O valor do subsídio aumentou em 68% (R\$ 5.237,7 para R\$
-  38.162,45). O novo valor, porém, foi calculado sem os
+- O valor do subsídio aumentou de R\$ 5.237,7 para R\$
+  38.162,45. O novo valor, porém, foi calculado sem os
   descontos por tipo de viagem que eram aplicados à epoca.
 
 ## Análise exploratória
