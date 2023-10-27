@@ -40,7 +40,7 @@ Assim que isto for feito, os dias referentes ao mês de outubro deverão ser rep
 **3 - Resultado**:
 
 
-> **Status: Em andamento**
+> **Status: Em andamento** - falta incluir valores separados das glosas e incluir reprocessamento de outubro/23
 
 Valor pago pré-reprocessamento: R\$ 8.388,97
 Valor a pagar pós-reprocessamento: R\$ 28.309,07
